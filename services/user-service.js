@@ -13,10 +13,14 @@ module.exports = (app) => {
         userDao.deleteUser(req.params.userId)
             .then(status => req.send(status));
 
-    const updateUser = (req, res) =>
-        userDao.updateUser(req.body)
-            .then(status => req.send(status));
-
+    const updateUser = (req, res) => {
+        let profile = {
+            ...req.body
+        }
+        console.log(req.params)
+         return userDao.updateUser(profile)
+            .then((status) => res.send(status));
+    }
     const login = (req, res) => {
         userDao.findByUsernameAndPassword(req.body)
             .then(user => {
@@ -54,7 +58,7 @@ module.exports = (app) => {
     app.post('/api/register', register);
     app.post('/api/profile', profile);
     app.post('/api/logout', logout);
-    app.put('/api/users', updateUser);
+    app.put('/api/profile/:id', updateUser);
     app.delete('/api/users/:userId', deleteUser);
     app.get('/api/users', findAllUsers);
     app.get('/api/users/:userId', findUserById);
