@@ -1,0 +1,22 @@
+[
+  {
+    "topic": "Algorithms",
+    "userName": "Bob Smith",
+    "verified": false,
+    "handle": "Bsmith",
+    "time": "2h",
+    "post": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "avatar-image": "../../../images/blankProfile.png",
+    "logo-image": "../../../images/blankProfile.png"
+  },
+  {
+    "topic": "Web Development",
+    "userName": "John Deere",
+    "verified": true,
+    "handle": "Jdeere",
+    "time": "2h",
+    "post": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ore magna aliqua. ",
+    "avatar-image": "../../../images/blankProfile.png",
+    "logo-image": "../../../images/blankProfile.png"
+  }
+]
