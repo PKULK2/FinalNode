@@ -29,5 +29,6 @@ mongoose.connect('mongodb://localhost:27017/webdev');
 
 require('./services/user-service')(app);
 require('./services/post-service')(app);
+require('./services/review-service')(app);
 
 app.listen(process.env.PORT || 4000);
