@@ -6,6 +6,9 @@ const userSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
     userType: String,
-    likedMovies: [String]
+    likedMovies: [String],
+    profilePic: {
+
+    }
 }, {collection: 'users'});
 module.exports = userSchema;

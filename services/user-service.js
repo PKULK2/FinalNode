@@ -17,7 +17,8 @@ module.exports = (app) => {
         let profile = {
             ...req.body
         }
-        console.log(req.params)
+        console.log(profile)
+        req.session['profile'] = profile;
          return userDao.updateUser(profile)
             .then((status) => res.send(status));
     }
@@ -48,15 +49,23 @@ module.exports = (app) => {
             })
     }
 
-    const profile = (req, res) =>
-        res.json(req.session['profile']);
+    const profile = (req, res) => {
+        console.log("HERE!!")
+        console.log(req.session['profile'])
+        return res.json(req.session['profile']);
+    }
 
     const logout = (req, res) =>
         res.send(req.session.destroy());
 
+    const profileByGet = (req, res) =>
+        //userDao.findUserById()
+        res.json(req.session['profile']);
+
     app.post('/api/login', login);
     app.post('/api/register', register);
     app.post('/api/profile', profile);
+    app.get('/api/profileByGet', profileByGet);
     app.post('/api/logout', logout);
     app.put('/api/profile/:id', updateUser);
     app.delete('/api/users/:userId', deleteUser);

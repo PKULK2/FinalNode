@@ -6,7 +6,7 @@ const findAllReviews = () =>
 const findReviewById = (userId) =>
     reviewModel.findById(userId);
 
-const findReviewbyIMDBID  = (imdbID) =>
+const findReviewByIMDBID  = (imdbID) =>
     reviewModel.find({imdbID: imdbID});
 
 
@@ -14,8 +14,6 @@ const createReview = (review) =>
     reviewModel.create(review);
 
 
-
-
 module.exports = {
-    findAllReviews,findReviewById,findReviewbyIMDBID,createReview
+    findAllReviews,findReviewById,findReviewByIMDBID,createReview
 };

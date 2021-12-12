@@ -25,7 +25,7 @@ app.use(session({
 }));
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/webdev');
+mongoose.connect('mongodb://localhost:27017/project');
 
 require('./services/user-service')(app);
 require('./services/post-service')(app);

@@ -10,19 +10,14 @@ module.exports = (app) => {
             .then(review => res.json(review));
 
     const findReviewByIMDBID = (req, res) =>
-        reviewDao.findReviewbyIMDBID(req.imdbID)
+        reviewDao.findReviewByIMDBID(req.params.imdbID)
             .then(reviews => res.json(reviews));
+
 
     const createReview = (req, res) => {
         reviewDao.createReview(req.body)
             .then((review) => res.json(review))
     }
-
-
-
-
-    
-
 
     app.get('/api/reviews', findAllReviews);
     app.post("/api/create-review", createReview);
