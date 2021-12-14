@@ -5,6 +5,14 @@ module.exports = (app) => {
         userDao.findAllUsers()
             .then(users => res.json(users));
 
+    const findOneUser = (req, res) => {
+        console.log(req.body, "BODY")
+        console.log(req.params, "PARAMS")
+        console.log(req.params.id, "ID")
+        return userDao.findOne(req.params.id)
+            .then(users => res.json(users));
+    }
+
     const findUserById = (req, res) =>
         userDao.findUserById(req.userId)
             .then(user => res.json(user));
@@ -17,7 +25,6 @@ module.exports = (app) => {
         let profile = {
             ...req.body
         }
-        console.log(profile)
         req.session['profile'] = profile;
          return userDao.updateUser(profile)
             .then((status) => res.send(status));
@@ -50,8 +57,6 @@ module.exports = (app) => {
     }
 
     const profile = (req, res) => {
-        console.log("HERE!!")
-        console.log(req.session['profile'])
         return res.json(req.session['profile']);
     }
 
@@ -59,7 +64,6 @@ module.exports = (app) => {
         res.send(req.session.destroy());
 
     const profileByGet = (req, res) =>
-        //userDao.findUserById()
         res.json(req.session['profile']);
 
     app.post('/api/login', login);
@@ -71,4 +75,5 @@ module.exports = (app) => {
     app.delete('/api/users/:userId', deleteUser);
     app.get('/api/users', findAllUsers);
     app.get('/api/users/:userId', findUserById);
+    app.get('/api/users/:id', findOneUser);
 };

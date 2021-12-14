@@ -3,6 +3,9 @@ const userModel = require('./user-model');
 const findAllUsers = () =>
     userModel.find();
 
+const findOne = (id) =>
+    userModel.findOne({_id: id});
+
 const findUserById = (userId) =>
     userModel.findById(userId);
 
@@ -26,5 +29,5 @@ const deleteUser = (userId) =>
 module.exports = {
     findByUsername, findAllUsers, findUserById,
     findByUsernameAndPassword,
-    createUser, updateUser, deleteUser
+    createUser, updateUser, deleteUser, findOne
 };

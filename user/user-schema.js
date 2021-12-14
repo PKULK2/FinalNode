@@ -7,8 +7,6 @@ const userSchema = mongoose.Schema({
     lastName: String,
     userType: String,
     likedMovies: [String],
-    profilePic: {
-
-    }
+    profilePic: String
 }, {collection: 'users'});
 module.exports = userSchema;

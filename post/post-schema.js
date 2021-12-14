@@ -6,7 +6,6 @@ const schema = mongoose.Schema({
     handle: String,
     post: String,
     time: String,
-    "logo-image": String,
-    "avatar-image": String,
+    "avatar-image": String
 }, {collection: "posts"});
 module.exports = schema;
