@@ -75,5 +75,5 @@ module.exports = (app) => {
     app.delete('/api/users/:userId', deleteUser);
     app.get('/api/users', findAllUsers);
     app.get('/api/users/:userId', findUserById);
-    app.get('/api/users/:id', findOneUser);
+    app.get('/api/oneUsers/:id', findOneUser);
 };
