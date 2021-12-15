@@ -13,7 +13,9 @@ const findReviewByIMDBID  = (imdbID) =>
 const createReview = (review) =>
     reviewModel.create(review);
 
+const deleteReview = (id) =>
+    reviewModel.deleteOne({_id: id});
 
 module.exports = {
-    findAllReviews,findReviewById,findReviewByIMDBID,createReview
+    findAllReviews,findReviewById,findReviewByIMDBID,createReview, deleteReview
 };
